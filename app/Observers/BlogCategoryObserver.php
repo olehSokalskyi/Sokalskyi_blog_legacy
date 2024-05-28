@@ -30,7 +30,7 @@ class BlogCategoryObserver
     protected function setSlug(BlogCategory $blogCategory)
     {
         if (empty($blogCategory->slug)) {
-            $blogCategory->slug = Str::slug($blogCategory->title);
+            $blogCategory->slug = \Str::slug($blogCategory->title);
         }
     }
 
