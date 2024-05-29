@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Blog\Admin\CategoryController;
 use App\Http\Controllers\RestTestController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Blog\PostController;

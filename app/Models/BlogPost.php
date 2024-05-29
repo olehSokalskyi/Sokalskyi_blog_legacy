@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class BlogPost extends Model
 {
     use SoftDeletes;
+
+    const UNKNOWN_USER = 1;
     protected $fillable
         = [
             'title',
@@ -18,7 +20,7 @@ class BlogPost extends Model
             'content_raw',
             'is_published',
             'published_at',
-            'user_id',
+
         ];
 
     /**
@@ -26,6 +28,7 @@ class BlogPost extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
+
     public function category()
     {
         //стаття належить категорії
@@ -42,4 +45,5 @@ class BlogPost extends Model
         //стаття належить користувачу
         return $this->belongsTo(User::class);
     }
+
 }
