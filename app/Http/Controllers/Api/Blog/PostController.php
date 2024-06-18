@@ -2,19 +2,24 @@
 
 namespace App\Http\Controllers\Api\Blog;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Blog\Admin\BaseController;
 use App\Models\BlogPost;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class PostController extends BaseController
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $posts = BlogPost::with(['user', 'category'])->get();
+        $posts = BlogPost::with(['user', 'category'])->paginate(5);
 
+        return $posts;
+    }
+    public function forComboBox()
+    {
+        $posts = BlogPost::with(['user', 'category'])->get();
         return $posts;
     }
 

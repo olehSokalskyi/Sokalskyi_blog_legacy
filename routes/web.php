@@ -10,8 +10,6 @@ use App\Http\Controllers\DiggingDeeperController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('api/blog/posts', [\App\Http\Controllers\Api\Blog\PostController::class, 'index']);
-
 
 Route::middleware([
     'auth:sanctum',
