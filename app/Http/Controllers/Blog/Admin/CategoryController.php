@@ -72,7 +72,7 @@ class CategoryController extends BaseController
      */
     public function show(string $id)
     {
-       // dd(__METHOD__);
+        dd(__METHOD__);
     }
 
     /**
@@ -123,6 +123,6 @@ class CategoryController extends BaseController
      */
     public function destroy(string $id)
     {
-        //dd(__METHOD__);
+        dd(__METHOD__);
     }
 }
